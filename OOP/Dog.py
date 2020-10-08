@@ -70,6 +70,9 @@ class Person:
     
     no_of_people = 0  # Class attribute
     
+    __sercretCount = 10  # Data Hiding. Prefix with double underscore
+    # can be accessed by object._className__attrName
+    
     def __init__(self, name):
         self.name = name
         # Person.no_of_people += 1
@@ -86,6 +89,12 @@ class Person:
     @staticmethod  # Static method dont change anything
     def add(x):
         return x + 5
+
+    
+class Person1(Person):
+    
+    def __init__(self):
+        pass
 
 
 if __name__ == '__main__':
@@ -128,3 +137,7 @@ if __name__ == '__main__':
     
     print(Person.add(5))  # Static method call
     
+    person1 = Person1()
+    
+    print(person1.number_of_people())
+    person1.add(5)
