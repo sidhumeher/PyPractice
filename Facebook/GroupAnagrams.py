@@ -27,6 +27,9 @@ def groupAnagrams(strs):
     
     print(trackingDict.values())
     
+# Time Complexity: O(n*klogk). n= No of strings in input, k is max length of string. It takes
+# klogk time to sort the string
+
 
 if __name__ == '__main__':
     
