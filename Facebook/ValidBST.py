@@ -21,9 +21,6 @@ class TreeNode(object):
 
 def isValidBST(self, root):
     
-    if root != None:
-        return True
-
     def helper(node, lower=int('-inf'), upper=int('inf')):
         
         if node != None:

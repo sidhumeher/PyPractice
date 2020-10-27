@@ -4,9 +4,9 @@ Created on Oct 21, 2020
 @author: sidteegela
 '''
 
+
 # Finding Substring or pattern matching of a string with Rabin Karp algorithm
-
-
+# Time complexity: Avg case: O(n+m). Worst case: o(n*m) for a bad hash function
 def search(pattern, text, q):
 
     d = len(text)  # Taken as length of text. But can be any number
