@@ -24,7 +24,9 @@ def reverse(inputString):
 
     while leftPointer < len(inputString_to_list) - 1 and rightPointer > -1:
         if inputString_to_list[leftPointer].isalpha() and inputString_to_list[rightPointer].isalpha():
-            inputString_to_list[leftPointer], inputString_to_list[rightPointer] = inputString_to_list[rightPointer], inputString_to_list[leftPointer]
+            inputString_to_list[leftPointer], inputString_to_list[rightPointer] = \
+            inputString_to_list[rightPointer], inputString_to_list[leftPointer]
+            
             leftPointer += 1
             rightPointer -= 1
         elif inputString_to_list[leftPointer].isalpha() != True:

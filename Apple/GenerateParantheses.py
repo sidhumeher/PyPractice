@@ -43,13 +43,17 @@ def generateParanthesis_recursion(n):
     result = []
     
     def helper(s='', left=0, right=0):  # Backtracking
+        # Base case
         if len(s) == 2 * n:
+            print('s:', s)
             result.append(s)
             return
-        if left < n:  # If left less than n, add '(        
+        if left < n:  # If left less than n, add '(
             helper(s + '(', left + 1 , right)
-        if right < left:  # Add ')' if right brackets count is less than left count
+            print('Inside left s:', s)
+        if right < left:  # Add ')' if right brackets count is less than left count            
             helper(s + ')', left, right + 1)
+            print('Inside right s:', s)
     
     helper()
     print(result)
@@ -57,9 +61,9 @@ def generateParanthesis_recursion(n):
 
 if __name__ == '__main__':
     n = 2
-    generateParanteses(n)
+    # generateParanteses(n)
     
     n = 2
     generateParanthesis_recursion(n)
     n = 3
-    generateParanthesis_recursion(n)
+    # generateParanthesis_recursion(n)
