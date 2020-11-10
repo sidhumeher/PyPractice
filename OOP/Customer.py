@@ -14,6 +14,9 @@ Object oriented programming pillars:
 
 class Customer:
     
+    # Class attributes
+    compamy = ''
+    
     # Constructor/initializer
     def __init__(self, name, membership):  # Overriding init method
         self.name = name
@@ -21,12 +24,15 @@ class Customer:
         
     @property
     def name(self):
+        print('Using get method')
         return self._name
     
     @name.setter
     def name(self, name):
+        print('Using set method')
         self._name = name
         
+    # Instance method
     def upgrade_membership(self, newMembership):
         self.membership = newMembership
 
@@ -34,7 +40,7 @@ class Customer:
     # def readCustomer():
     #    print('Reading customer data')
     
-    def __str__(self):
+    def __str__(self):  # Dunder method. Begins and ends with __
         print('Converting customer object')
         return self.name + ',' + self.membership
     
@@ -59,3 +65,5 @@ if __name__ == '__main__':
     print(customer1)  # Invokes __str__()
     
     print(customers[0] == customers[1])
+
+    print(customer1.name)  # Used even when a customer object is created
