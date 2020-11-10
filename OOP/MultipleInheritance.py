@@ -28,7 +28,7 @@ class Base3(Base1, Base2):
 In the below example, class search order is [Derived2, Derived1, Base, object] class
 This order is called linearization and the rules used to find this class is called
 Method Resolution Order (MRO)
-MRO ensures that a class always appears before its parents. 
+MRO ensures that a class always appears before its parents. MRO is determined at runtime
 In case of multiple parents, the order is the same as tuples of base classes.
 '''
 
@@ -43,6 +43,18 @@ class Derived1(Base):
 
 class Derived2(Derived1):
     pass  # Derives features from Base and Derived1 classes and itself
+
+
+# Old style classes use Depth first left to right algorithm to search for parent class
+# Old style class 
+class OldStyleClass:  
+    pass
+
+
+# New style class use C3 Linearization algorithm
+# New style class 
+class NewStyleClass(object):  
+    pass
 
 
 if __name__ == '__main__':
