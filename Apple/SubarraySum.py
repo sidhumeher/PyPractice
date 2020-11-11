@@ -32,9 +32,9 @@ def subarraySum(nums, k):
 def subarraySum1(nums, k):
     
     count = 0
-    for i in range(0, len(nums)):
+    for i in range(0, len(nums)):  # Fixing a start point
         sum = 0
-        for j in range(i, len(nums)):
+        for j in range(i, len(nums)):  # Iterating over every possible end point
             sum += nums[j]
             if sum == k:
                 count += 1
