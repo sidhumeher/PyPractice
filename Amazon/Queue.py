@@ -32,7 +32,7 @@ if __name__ == '__main__':
     print(d.popleft())  # Removes the item from left. First inserted item
     print(d)
     
-    # pop() will remove the item from the right. Last insetred item
+    # pop() will remove the item from the right. Last inserted item
     
     # queue implementation from Queue class
     q1 = Queue(maxsize=5)
