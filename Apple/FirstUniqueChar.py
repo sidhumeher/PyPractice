@@ -6,6 +6,7 @@ Created on Nov 4, 2020
 from collections import Counter
 
 
+# Best approach
 def firstUniqChar(s):
     
     counter = Counter(s)
@@ -16,7 +17,8 @@ def firstUniqChar(s):
             return key
         
     return -1
-            
+# Time complexity: O(n)            
+
 
 if __name__ == '__main__':
     s = "leetcode"

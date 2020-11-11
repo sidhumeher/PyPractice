@@ -96,6 +96,42 @@ def minwindow(s, t):
     return s[start_index : start_index + min_length]
 
 
+# Practice
+def minwindow1(s, t):
+    
+    if len(s) < len(t):
+        return
+    
+    hash_s = [0] * 256
+    hash_t = [0] * 256
+
+    for item in t:
+        hash_t[ord(item)] += 1
+        
+    start = 0; minLength = float('inf'); count = 0; startIndex = -1
+    
+    for i in range(0, len(s)):
+        hash_s[ord(s[i])] += 1
+        
+        if hash_t[ord(s[i])] != 0 and hash_s[ord(s[i])] <= hash_t[ord(s[i])]:
+            count += 1
+            
+        if count == len(t):
+            while hash_s[ord(s[start])] > hash_t[ord(s[start])] or hash_t[ord(s[start])] == 0:
+                if hash_s[ord(s[start])] > hash_t[ord(s[start])]:
+                    hash_s[ord(s[start])] -= 1
+                    start += 1
+
+            len_window = i - start + 1
+            if minLength > len_window:
+                minLength = len_window
+                startIndex = start
+
+    if startIndex == -1:
+        return
+    return s[startIndex:startIndex + minLength]
+
+
 if __name__ == '__main__':
     s = 'ADOBECODEBANC'
     t = 'ABC'
@@ -103,4 +139,5 @@ if __name__ == '__main__':
     
     s = 'AOBEOCDBAC'
     t = 'ABC'
-    minwindow(s, t)
+    # minwindow(s, t)
+    print(minwindow1(s, t))

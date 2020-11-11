@@ -63,7 +63,7 @@ def productExceptSelf_withoutextraspace(nums):
         
     r = 1  # Contains product of all items to the right of index
     for i in reversed(range(len(nums))):
-        result[i] = nums[i] * r
+        result[i] = result[i] * r
         r *= nums[i]
         
     return result
@@ -72,11 +72,33 @@ def productExceptSelf_withoutextraspace(nums):
 # Space: O(1), excluding space for result list
 
 
+# Practice
+def productExceptSelf_usingList1(nums):
+    
+    if len(nums) == 0:
+        return []
+
+    result = []
+    left = [1] * len(nums)
+    right = [1] * len(nums)
+    
+    for i in range(1, len(nums)):
+        left[i] = left[i - 1] * nums[i - 1]
+    
+    for i in reversed(range(0, len(nums) - 1)):
+        right[i] = right[i + 1] * nums[i + 1]
+        
+    for i in range(len(left)):
+        result.append(left[i] * right[i])
+        
+    return result
+
+
 if __name__ == '__main__':
     nums = [1, 2, 3, 4]
     # print(productExceptSelf(nums))
     
     nums = [4, 5, 1, 8, 2]
-    # print(productExceptSelf_usingList(nums))
+    print(productExceptSelf_usingList(nums))
     
     print(productExceptSelf_withoutextraspace(nums))

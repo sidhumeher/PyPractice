@@ -16,7 +16,7 @@ def majorityElement(nums):  # Brute force and extra space
     result = []
     
     for key, value in occurences.items():
-        if value > majority:
+        if value >= majority:
             result.append(key)
             
     return result
@@ -37,9 +37,8 @@ def majorityElement_bestapproach(nums):
     if len(nums) == 0:
         return []
 
-    # 1st pass
+    # 1st pass O(n) time
     count1, count2, candidate1, candidate2 = 0, 0, None, None
-    # O(n) time
     for n in nums:
         if candidate1 == n:
             count1 += 1
@@ -53,8 +52,8 @@ def majorityElement_bestapproach(nums):
             count2 += 1
         else:
             count1 -= 1; count2 -= 1
-    # O(n) time
-    # 2nd pass
+    
+    # 2nd pass O(n) time
     result = []
     for item in [candidate1, candidate2]:
         if nums.count(item) > len(nums) // 3:
