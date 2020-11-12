@@ -37,7 +37,7 @@ class Stack:
         while temp:
             out.append(self.top)
             temp = temp.next
-        return ('Stack: ()', format(out))
+        return ('Stack: {}'.format(out))
     
     def getMin(self):
         if self.top is None:
@@ -63,7 +63,7 @@ class Stack:
         if self.top is None:
             print('Stack is empty')
         else:
-            if self.top < self.min:
+            if self.top.value < self.min:
                 return self.min
             else:
                 return self.top.value
@@ -111,3 +111,5 @@ if __name__ == '__main__':
     print('Min:', s.getMin())
     s.pop()
     print('Min:', s.getMin())
+    
+    print(s)
