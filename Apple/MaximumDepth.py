@@ -21,6 +21,13 @@ def maxDepth_BST(node):
     return 1 + max(maxDepth_BST(node.left), maxDepth_BST(node.right))
 
 
+def maxDepth(node):
+    if node == None:
+        return 0
+    
+    return 1 + max(maxDepth(node.left) + maxDepth(node.right))
+
+
 if __name__ == '__main__':
     
     root = Node(3)

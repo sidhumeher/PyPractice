@@ -52,6 +52,21 @@ def sameTree(root1, root2):
 # Time complexity O(n)
 # Space: O(log n) for balanced tree and O(n) for unbalanced tree
 
+
+def sameTree1(root1, root2):
+    
+    if root1 == None and root2 == None:
+        return True
+
+    elif root1 == None and root2 != None:
+        return False
+    elif root1 != None and root2 == None:
+        return False
+    elif root1.data != root2.data:
+        return False
+    else:
+        return sameTree1(root1.left, root2.left) and sameTree1(root1.right, root2.right)
+
     
 if __name__ == '__main__':
     
@@ -70,6 +85,7 @@ if __name__ == '__main__':
     root2.right = node5
     
     print(sameTree(root1, root2))
+    print(sameTree1(root1, root2))
     #----------
     
     root1 = Node(1)
@@ -81,4 +97,5 @@ if __name__ == '__main__':
     root2.right = node3
 
     print(sameTree(root1, root2))
+    print(sameTree1(root1, root2))
     
