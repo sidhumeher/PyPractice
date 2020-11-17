@@ -39,6 +39,14 @@ def diameter(node):
 
 # Time complexity: O(n)
 
+'''
+Max of the following
+1. Height of left+right subtree
+2. Diameter of left subtree
+3. Diameter of right subtree
+max(l+r, max(ldiamter, rdiameter))
+'''
+
 
 def diameter1(node):
     if node == None:
@@ -48,7 +56,7 @@ def diameter1(node):
         nonlocal result
         if node == None:
             return 0
-        
+        # Heights of left and right subtrees
         left = dfs(node.left)
         right = dfs(node.right)
     
