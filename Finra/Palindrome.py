@@ -1,10 +1,12 @@
 '''
-Created on May 5, 2020
+Created on Nov 17, 2020
 
 @author: sidteegela
 '''
+# Check if a string is a Palindrome
 
 
+# Two pointer approach
 def isPalindrome(s):
     
     # Ignoring cases
@@ -26,16 +28,26 @@ def isPalindrome(s):
     return True
 
 
+# Reverse string approach
+def isPalindrome1(s):
+    
+    if s == '':
+        return True
+    
+    if s == s[::-1]:
+        return True
+    
+    return False
+
+    
 if __name__ == '__main__':
-    
-    s = 'A man, a plan, a canal: Panama'
-    print(isPalindrome(s))
-    
-    s = 'race a car'
-    print(isPalindrome(s))
-    
     s = 'No lemon, no melon'
     print(isPalindrome(s))
     
-    s = 'Was it a cat I saw?'
-    print(isPalindrome(s))
+    s = 'radar'
+    # print(isPalindrome(s))
+    print(isPalindrome1(s))
+    
+    s = 'Geeks and geeks'
+    # print(isPalindrome(s))
+    print(isPalindrome1(s))

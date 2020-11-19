@@ -32,7 +32,7 @@ def twoSum1(nums, target):
             return [track[remain], index]
         
 # Time: O(n)
-# Space O(n) worst case        
+# Space O(n) worst case
     
     
 if __name__ == '__main__':

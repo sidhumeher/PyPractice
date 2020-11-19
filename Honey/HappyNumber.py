@@ -9,11 +9,9 @@ def happyNumber(num):
     
     def getNext(n):
         sum = 0
-
         while n > 0:
             n, reminder = divmod(n, 10)
             sum += reminder ** 2
-    
         return sum
     
     seen = set()
@@ -32,4 +30,4 @@ if __name__ == '__main__':
     print(happyNumber(num))
     
     num = 19
-    print(happyNumber(num))
+    # print(happyNumber(num))
