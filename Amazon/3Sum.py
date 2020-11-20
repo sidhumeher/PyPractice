@@ -5,7 +5,7 @@ Created on Oct 22, 2020
 '''
 
 
-def threSum(ipList):
+def threeSum(ipList):
     
     result = []
     ipList.sort()
@@ -38,5 +38,5 @@ def threSum(ipList):
 
 if __name__ == '__main__':
     ipList = [-1, 0, 1, 2, -1, -4]
-    print(threSum(ipList))
+    print(threeSum(ipList))
     
