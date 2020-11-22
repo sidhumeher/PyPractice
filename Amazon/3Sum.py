@@ -18,6 +18,7 @@ def threeSum(ipList):
         l = i + 1
         r = len(ipList) - 1
         
+        # Two sum problem
         while l < r:
             sum = ipList[i] + ipList[l] + ipList[r]
             if sum < 0:
