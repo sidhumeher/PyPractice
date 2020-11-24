@@ -4,6 +4,13 @@ Created on Nov 21, 2020
 @author: sidteegela
 '''
 
+'''
+Access modifiers Python
+name - Public(Accessible inside and outside of class
+_name - Protected (Shouldn't be used outside of class unless subclass)
+__name - Private (Only accessible inside class)
+'''
+
 
 class Employee:
     
@@ -12,14 +19,44 @@ class Employee:
     
     def __init__(self, name, salary):
         self.name = name
-        self.salary = salary
+        self.__salary = salary
         Employee.empCount += 1
-        
+
+    def get_salary(self):
+        return self.__salary
+
+    def set_salary(self, value):
+        self.__salary = value
+
+    def del_salary(self):
+        del self.__salary
+    
+    # property() returns the object of property class
+    salary = property(get_salary, set_salary, del_salary, "salary's docstring")    
+    
     def getCount(self):
         print('Total employees:', Employee.empCount)
         
+    # Getter method
+    def getNmae(self):
+        return self.name
+    
+    # Setter method
+    def setName(self, name):
+        self.name = name
+        
     def getEmployee(self):
         print('Name:', self.name, ',', 'Salary:', self.salary)
+        
+    # class method
+    @classmethod
+    def hello(cls):  # Takes a class argument
+        print('hello from', cls.__name__)
+        
+    # static method
+    @staticmethod
+    def hello1():
+        print('Hello from static method')
 
 
 if __name__ == '__main__':
@@ -42,3 +79,9 @@ if __name__ == '__main__':
     # #Data Hiding# #
     # Hidden attributes can be accessed with object._className__attrName
     print(emp1._Employee__hideemp)
+    
+    Employee.hello()  # class method invocation
+    emp1.hello()
+    
+    Employee.hello1()  # static method can be called with class or object
+    emp2.hello1()
