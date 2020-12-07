@@ -39,7 +39,7 @@ def compareVersion(v1, v2):
     return 0
 
 # Time complexity: O(n)
-# Space complexity: O(n+m),n=length of v1list and m=length of v2list
+# Space complexity: O(n+m),n=length of v1 list and m=length of v2 list
 
 
 if __name__ == '__main__':

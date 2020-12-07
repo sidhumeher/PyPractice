@@ -124,6 +124,26 @@ def removeDuplicates(nums):
     return result
 
 
+# Remove duplicates from sorted list without extra space
+def removeDuplicates1(nums):
+    
+    if len(nums) < 2:
+        return nums
+    
+    i = 0;  # Slow pointer
+    
+    for j in range(1, len(nums)):
+        if nums[i] != nums[j]:
+            i += 1
+            nums[i] = nums[j]
+            print(nums)
+    i += 1
+    nums = nums[:i]
+    return nums
+# Time complexity: O(n)
+# Space: O(1)
+
+    
 if __name__ == '__main__':
     nums = [3, 1, 4, 5, 3, 6, 2, 9]
     print(secondLargest(nums))
@@ -139,4 +159,7 @@ if __name__ == '__main__':
     
     nums = [-2, -3, 4, -1, -2, 1, 5, -3]
     print(removeDuplicates(nums))
+    
+    nums = [0, 0, 1, 1, 2, 3, 5, 5, 6]
+    print(removeDuplicates1(nums))
     
